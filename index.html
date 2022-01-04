@@ -1,0 +1,91 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>grid style example</title>
+    <style>
+        body{
+            width:90%;
+            max-width:900px;
+            margin:2em auto;
+            font: .9em/1.2 Arial, Helvetica, Sans-serif;
+        }
+        .container{
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "sidebar content"
+                "sidebar footer";
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
+        }
+
+        header,
+        footer{
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(207,232,220);
+            border: 2px solid rgb(79,185,227);
+         
+        }
+
+        header{ 
+            grid-area: header;
+        }
+
+        footer{
+            grid-area: footer;
+        }
+
+        article{
+            grid-area: content;
+        }
+
+        aside{
+            border-right: 1px solid #999;
+            grid-area: sidebar;
+        }
+
+        .paraflex{
+            display:flex;
+            flex:1 auto;
+            flex-flow: row wrap;
+            align-items: center;
+            margin: 5px;
+            padding: 2px;
+            border-radius: 10px;
+            border: 2px solid blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>This is an example</header>
+        <article>
+            <h1>article one</h1>
+            <div class="paraflex">
+                <div>
+                    <h3>para one</h3>
+                    <p>
+                        para one hhjg jkghjg jhjhj 
+                    </p>
+                </div>
+                <div style="padding: 20px;"></div>
+                <div>
+                    <h3>para two</h3>
+                    <p>
+                        para two hhjg jhj jhj
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <aside>
+            <h2>aside other things</h2>
+            <p>jjjhhj jhjhj jhjjj</p>
+        </aside>
+
+        <footer>contact me@site.com</footer>
+    </div>
+</body>
+</html>
